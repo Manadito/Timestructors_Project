@@ -1,16 +1,19 @@
+// Loading all key values
+require("dotenv").config();
+
+// Third party libraries imports
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Move CORS up
+// Configuring CORS options
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "http://localhost:3000", // Allow only this origin
   methods: "GET, POST, PUT, PATCH, DELETE",
   credentials: true,
 };
@@ -19,7 +22,7 @@ app.use(cors(corsOptions));
 require("./config/mongoose.config"); // This calls the Mongoose Config file ... remember to have mongo running
 
 // --------------------------------------------------------------------------------------------------------------------------------------
-// Here we take the router instance from step 5 and import it over
+// Importing API routes and incorporating them to 'app' instance
 
 const UserRouter = require("./routes/user.routes");
 app.use("/api/users", UserRouter);
