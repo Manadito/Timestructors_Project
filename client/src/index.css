@@ -1,0 +1,169 @@
+/* Imported Google Fonts/ Must precede everything else */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Roboto:ital,wght@0,300;1,100;1,300&display=swap');
+
+/* Tailwind settings */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Imported Fonts */
+
+@font-face {
+  font-family: 'Round_Bold';
+  src: url('./assets/fonts/Round_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Round_Italic';
+  src: url('./assets/fonts/Round_Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Round_Regular';
+  src: url('./assets/fonts/Round_Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roundo_Regular';
+  src: url('./assets/fonts/Roundo_Regular.ttf');
+}
+
+@font-face {
+  font-family: 'FuturetteEx';
+  src: url('./assets/fonts/FuturetteEx.otf');
+}
+
+@font-face {
+  font-family: 'FuturetteExlo';
+  src: url('./assets/fonts/FuturetteExlo.otf');
+}
+
+/* Adding custom @layer utilities */
+@layer utilities {
+  .boxa::before {
+    background: conic-gradient(#27b2d9 20deg, transparent 120deg);
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%];
+    content: '';
+    @apply animate-fullSpin;
+  }
+  .boxa::after {
+    background: #a7e5ed url('/img/EinieSmall.jpg');
+    @apply absolute left-[3%]
+      top-[2%] h-[96%] w-[94%];
+    content: '';
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  }
+}
+
+@layer utilities {
+  .boxb::before {
+    background: conic-gradient(#49c9ed 20deg, transparent 120deg);
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%];
+    content: '';
+    @apply animate-fullSpin;
+  }
+  .boxb::after {
+    background: #a7e5ed url('/img/CleoSmall.jpg');
+    @apply absolute left-[3%]
+      top-[2%] h-[96%] w-[94%];
+    content: '';
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  }
+}
+
+@layer utilities {
+  .boxc::before {
+    background: conic-gradient(#49c9ed 20deg, transparent 120deg);
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%];
+    content: '';
+    @apply animate-fullSpin;
+  }
+  .boxc::after {
+    background: #a7e5ed url('/img/VinciSmall.jpg');
+    @apply absolute left-[3%]
+      top-[2%] h-[96%] w-[94%];
+    content: '';
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  }
+}
+
+@layer utilities {
+  .boxd::before {
+    background: conic-gradient(#49c9ed 20deg, transparent 120deg);
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%];
+    content: '';
+    @apply animate-fullSpin;
+  }
+  .boxd::after {
+    background: #a7e5ed url('/img/BillySmall.jpg');
+    @apply absolute left-[3%]
+      top-[2%] h-[96%] w-[94%];
+    content: '';
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  }
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+/* DOOR ANIMATIONS */
+
+.door {
+  left: 0;
+  transition: left 2s ease-in-out;
+}
+
+.door.open {
+  left: 100%;
+}
+.doorright {
+  right: 0;
+  transition: right 2s ease-in-out;
+}
+.doorright.open {
+  right: 100%;
+}
+
+.rotate-and-hide {
+  transform-origin: center;
+  background-position: center;
+  transition:
+    transform 1s ease-in-out,
+    opacity 0s ease-in-out 1s;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.rotate-and-hide.animate {
+  transform: rotate(90deg);
+  opacity: 0;
+  pointer-events: none; /* This will make the element unclickable, allowing clicks to pass through to elements behind  */
+}
+
+/*body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}*/
+
+/* Timestructors Text Stroke  */
+.stroke-text {
+  -webkit-text-stroke: 1px black; /* Webkit */
+}
+
+.buttons:active {
+  box-shadow: 0 5px #302e2e;
+}
+
+.shadows {
+  box-shadow: 0 9px #302e2e;
+}
