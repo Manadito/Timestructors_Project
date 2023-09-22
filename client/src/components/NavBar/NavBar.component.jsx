@@ -63,7 +63,7 @@ const NavBar = (props) => {
   // ii) API Calls
   const logoutUser = async () => {
     try {
-      await axios.get('http://localhost:8080/api/users/logout', {
+      await axios.get(`${baseUrl}/api/users/logout`, {
         withCredentials: true,
       });
       localStorage.removeItem('user');
